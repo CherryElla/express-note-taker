@@ -1,6 +1,8 @@
+const { json } = require("express")
 const express = require("express")
 const fs = require("fs")
 const path = require("path")
+const { stringify } = require("querystring")
 const notes = require("./Develop/db/db.json")
 const port = 3001
 
@@ -35,7 +37,10 @@ app.get("*",(req,res) => {
 
 app.post("/api/notes", (req, res) => {
     console.info(`${req.method} request received to add a note`)
-    notes.push(req.body)
+    let note = req.body
+    note.id = `${notes.length}`
+    notes.push(note)
+    fs.writeFileSync('./Develop/db/db.json', JSON.stringify(notes))
     res.sendStatus(200)
 })
 
