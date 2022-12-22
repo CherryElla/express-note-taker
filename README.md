@@ -21,3 +21,4 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 https://github.com/CherryElla/express-note-taker.git
 
+<img width="567" alt="Screenshot 2022-12-22 at 4 07 13 PM" src="https://user-images.githubusercontent.com/111384784/209226136-71d14c13-e74b-4429-9b15-3fbd35030e33.png">
